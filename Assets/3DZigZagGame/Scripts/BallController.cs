@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
 
 public class BallController : MonoBehaviour
 {
     [Header("Settings")]
     Rigidbody RB;
     [SerializeField] private float Speed;
+    bool Started;
+    bool GameOver;
 
     enum ChangeDirection 
     {
@@ -23,14 +26,34 @@ public class BallController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Started = false;
+        GameOver = false;
         
         
-        RB.velocity = new Vector3(Speed, 0,0);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!Started) 
+        {
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) 
+            {
+                RB.velocity = new Vector3(Speed, 0, 0);
+                Started = true;
+            }
+        }
+
+
+        if (!Physics.Raycast(transform.position, Vector3.down, 1.0f)) 
+        {
+            GameOver = true;
+            RB.velocity = new Vector3(0, -25.0f, 0);
+            Camera.main.GetComponent<CameraFollow>().GameOver = true;
+        }
+        Debug.DrawRay(transform.position, Vector3.down, Color.white);
+
+        if (GameOver) return;
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) 
         {
             if (changeDirection == ChangeDirection.OnX)
