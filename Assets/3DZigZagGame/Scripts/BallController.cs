@@ -10,6 +10,7 @@ public class BallController : MonoBehaviour
     [SerializeField] private float Speed;
     bool Started;
     bool GameOver;
+    public GameObject DiamondParticle;
 
     enum ChangeDirection 
     {
@@ -41,6 +42,8 @@ public class BallController : MonoBehaviour
             {
                 RB.velocity = new Vector3(Speed, 0, 0);
                 Started = true;
+
+                GameMAangerZigZagGame.Instance.StartGame();
             }
         }
 
@@ -50,6 +53,9 @@ public class BallController : MonoBehaviour
             GameOver = true;
             RB.velocity = new Vector3(0, -25.0f, 0);
             Camera.main.GetComponent<CameraFollow>().GameOver = true;
+
+            GameMAangerZigZagGame.Instance.GameOver();
+
         }
         Debug.DrawRay(transform.position, Vector3.down, Color.white);
 
@@ -93,5 +99,16 @@ public class BallController : MonoBehaviour
         //{
         //    RB.velocity = new Vector3(0, 0, Speed);
         //}
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Diamond") 
+        {
+            GameObject ParticleOBJ = Instantiate(DiamondParticle, other.gameObject.transform.position, Quaternion.identity) as GameObject;
+
+            Destroy(other.gameObject);
+            Destroy(ParticleOBJ, 1.0f);
+        }
     }
 }
