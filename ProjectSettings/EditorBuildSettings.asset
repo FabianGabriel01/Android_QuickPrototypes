@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/BallBounceGame/Scenes/BallBounceGame.unity
     guid: 3376858ab478b75448471b9e89b44426
+  - enabled: 1
+    path: Assets/3DTappyBallGame/Scenes/TappyBallGameScene.unity
+    guid: 0f953d42d903aaf4fa4c98aa7c5685da
   m_configObjects: {}

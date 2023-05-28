@@ -16,7 +16,7 @@ public class BallBounce : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Physics.gravity = new Vector3(0.0f, -9.71f, 0.0f);
     }
 
     // Update is called once per frame
