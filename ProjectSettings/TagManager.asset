@@ -10,6 +10,7 @@ TagManager:
   - Remover
   - Fruit
   - Ray
+  - Bomb
   layers:
   - Default
   - TransparentFX
