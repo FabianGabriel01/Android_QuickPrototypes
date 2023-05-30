@@ -8,6 +8,8 @@ TagManager:
   - Obstacle
   - Diamond
   - Remover
+  - Fruit
+  - Ray
   layers:
   - Default
   - TransparentFX

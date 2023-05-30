@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/3DTappyBallGame/Scenes/TappyBallGameScene.unity
     guid: 0f953d42d903aaf4fa4c98aa7c5685da
+  - enabled: 1
+    path: Assets/3DFruitNinja/Scenes/3DFruitNinja.unity
+    guid: b8ec8892d365d154a82d2dcc329a7102
   m_configObjects: {}
