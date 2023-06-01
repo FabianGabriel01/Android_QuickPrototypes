@@ -12,6 +12,8 @@ public class BallSoccer : MonoBehaviour
         Physics.gravity = new Vector3(0f,-9.81f,0f);
 
         rb= GetComponent<Rigidbody>();
+
+        Destroy(gameObject, 10f);
     }
 
     // Update is called once per frame

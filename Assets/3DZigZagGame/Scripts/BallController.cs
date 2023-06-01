@@ -29,6 +29,7 @@ public class BallController : MonoBehaviour
     {
         Started = false;
         GameOver = false;
+
         
         
     }

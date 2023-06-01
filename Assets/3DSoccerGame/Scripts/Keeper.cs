@@ -5,33 +5,55 @@ using UnityEngine;
 
 public class Keeper : MonoBehaviour
 {
-    public float MaxX = 1f;
+    enum ChangeDirections 
+    {
+        MaxX,
+        MinX
+    }
+
+    ChangeDirections ChangesX = ChangeDirections.MaxX;
+
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("Move", 1f,1f);
+
     }
 
     // Update is called once per frame
     void Update()
     {
 
+        SwitchDirections();
+        Comparations();
     }
 
-    void Right(bool T) 
+    void SwitchDirections() 
     {
-        if (T)
-            transform.Translate(Vector3.right * 1f * Time.deltaTime);
-        else 
+        switch (ChangesX) 
         {
-            transform.Translate(-Vector3.right * 1f * Time.deltaTime);
+            case ChangeDirections.MaxX:
+                transform.position += new Vector3(1f, 0f, 0f) * Time.deltaTime;
+            break;
+        
+            case ChangeDirections.MinX:
+                transform.position += new Vector3(-1f, 0f, 0f) * Time.deltaTime;
+            break;
+
+            default:
+            break;
         }
     }
 
-    IEnumerator Move() 
+    void Comparations() 
     {
-        Right(true);
-        yield return new WaitForSeconds(1f);
-        Right(false);
+        if (transform.position.x <=-1f) 
+        {
+            ChangesX = ChangeDirections.MaxX;
+        }
+        else if (transform.position.x >= 1f) 
+        {
+            ChangesX = ChangeDirections.MinX;
+        }
     }
+
 }
