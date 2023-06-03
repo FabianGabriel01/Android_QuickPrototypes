@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/3DSoccerGame/Scene/3DSoccerGame.unity
     guid: bc116f26ec3e4fd42a83ec434438c8bf
+  - enabled: 1
+    path: Assets/3DBlockDodge/Scenes/3DBlockDodge.unity
+    guid: 7a80e8fdbebe7e74f917a7b9c5dd77a0
   m_configObjects: {}
