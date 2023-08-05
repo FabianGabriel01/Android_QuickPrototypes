@@ -37,4 +37,9 @@ public class BallBounceGameManager : MonoBehaviour
         SCORE++;
         textScore.text = SCORE.ToString();
     }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
 }

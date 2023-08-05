@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PipeSpawner : MonoBehaviour
 {
     public GameObject PipeOBJ;
@@ -27,5 +27,10 @@ public class PipeSpawner : MonoBehaviour
     public void CancelInvokeSpawnPipe() 
     {
         CancelInvoke("SpawnPipe");
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 public class GameManagerBallsBounceOnClick : MonoBehaviour
@@ -23,7 +24,7 @@ public class GameManagerBallsBounceOnClick : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SpawnersBalls", 1.5f, 0.5f);
+        InvokeRepeating("SpawnersBalls", 1.5f, 1.0f);
         Score = 0;
         BallsOnScene = 0;
     }
@@ -58,5 +59,10 @@ public class GameManagerBallsBounceOnClick : MonoBehaviour
     public void ScoreUp() 
     {
         Score++;
+    }
+
+    public void MainMenu() 
+    {
+        SceneManager.LoadScene(0);
     }
 }

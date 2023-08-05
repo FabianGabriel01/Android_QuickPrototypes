@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -45,5 +46,10 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(WaitTime);
             Instantiate(Obstacle, transformSpawnPoints.position, Quaternion.identity);
         }
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }

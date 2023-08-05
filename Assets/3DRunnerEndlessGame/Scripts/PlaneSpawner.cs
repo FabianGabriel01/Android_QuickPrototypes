@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlaneSpawner : MonoBehaviour
 {
@@ -41,5 +42,10 @@ public class PlaneSpawner : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }

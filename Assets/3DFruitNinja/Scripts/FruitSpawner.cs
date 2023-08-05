@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FruitSpawner : MonoBehaviour
 {
@@ -64,5 +65,10 @@ public class FruitSpawner : MonoBehaviour
         GameObject Ins = Instantiate(Bomb, Pos, Quaternion.identity) as GameObject;
         Ins.GetComponent<Rigidbody>().AddForce(Vector3.up*35, ForceMode.Impulse);
         Ins.GetComponent<Rigidbody>().AddTorque(-40f,40f,0f);
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }

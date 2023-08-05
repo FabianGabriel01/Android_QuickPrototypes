@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManagerBlockDodgeGame : MonoBehaviour
 {
@@ -65,5 +66,10 @@ public class GameManagerBlockDodgeGame : MonoBehaviour
     {
         Score++;
         ScoreTxt.text = Score.ToString();
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }

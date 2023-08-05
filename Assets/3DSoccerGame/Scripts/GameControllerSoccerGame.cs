@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameControllerSoccerGame : MonoBehaviour
 {
@@ -51,5 +52,10 @@ public class GameControllerSoccerGame : MonoBehaviour
     void CreateBall() 
     {
         BallInstance = Instantiate(BallSoccer, transform.position, Quaternion.identity) as GameObject;
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }

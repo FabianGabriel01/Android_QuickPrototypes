@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameMAangerZigZagGame : MonoBehaviour
 {
@@ -34,6 +35,11 @@ public class GameMAangerZigZagGame : MonoBehaviour
     {
         UIManager.Instance.GameOver();
         ScoreManager.instance.StopScore();
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 
 
