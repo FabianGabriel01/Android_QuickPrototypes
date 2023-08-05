@@ -22,7 +22,7 @@ public class CapsulePlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        Movement();
     }
 
     private void FixedUpdate()
