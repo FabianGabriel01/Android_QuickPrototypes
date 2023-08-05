@@ -29,7 +29,6 @@ ExportedObj/
 [Ll]ibrary/
 [Tt]emp/
 [Oo]bj/
-[Bb]uild/
 [Bb]uilds/
 [Ll]ogs/
 [Uu]serSettings/
@@ -58,14 +57,8 @@ fmod.log
 fmod_editor.log
 
 # Builds
-*.apk
 *.unitypackage
 
 # Custom
 Assets/Plugins/ClientOnly/
 Assets/Plugins/ClientOnly.meta
-
-# DontPushThisFolders
-_TerrainAutoUpgrade/
-Customizable Skybox/
-Flooded_Grounds/
